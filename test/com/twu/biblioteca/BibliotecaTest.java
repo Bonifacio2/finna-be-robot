@@ -26,7 +26,7 @@ public class BibliotecaTest {
     public void testWelcomingMessage() {
         BibliotecaApp biblioteca = new BibliotecaApp();
 
-        assertEquals("Welcome!", outContent.toString());
+        assertEquals("Welcome!\n", outContent.toString());
     }
 
 }
