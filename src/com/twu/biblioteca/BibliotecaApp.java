@@ -1,12 +1,17 @@
 package com.twu.biblioteca;
 
+import java.util.ArrayList;
+
 public class BibliotecaApp {
+
+    private ArrayList<String> menuOptions = new ArrayList<String>();
 
     public static void main(String[] args) {
         System.out.println("Hello, world!");
     }
 
     BibliotecaApp(){
+        menuOptions.add("List Books");
         this.run();
     }
 
@@ -21,6 +26,8 @@ public class BibliotecaApp {
     }
 
     private void drawMainMenu() {
-        System.out.println("List Books");
+        for (String menuOption : menuOptions) {
+            System.out.println(menuOption);
+        }
     }
 }
