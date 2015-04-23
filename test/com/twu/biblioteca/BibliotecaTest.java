@@ -55,4 +55,13 @@ public class BibliotecaTest {
 
         assertThat(outContent.toString(), containsString("Select a valid option!"));
     }
+
+    @Test
+    public void testQuitting() {
+        BibliotecaApp biblioteca = new BibliotecaApp();
+
+        biblioteca.selectMenuOption("Quit");
+
+        assertThat(outContent.toString(), containsString("Bye!"));
+    }
 }
