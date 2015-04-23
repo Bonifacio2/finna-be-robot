@@ -12,5 +12,7 @@ public class BibliotecaApp {
 
     private void run(){
         System.out.println("Welcome!");
+
+        System.out.println("List Books");
     }
 }
