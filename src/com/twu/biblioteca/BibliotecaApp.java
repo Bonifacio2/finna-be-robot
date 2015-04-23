@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class BibliotecaApp {
 
     private ArrayList<String> menuOptions = new ArrayList<String>();
+    private ArrayList<Book> books = new ArrayList<Book>();
 
     public static void main(String[] args) {
         System.out.println("Hello, world!");
@@ -12,11 +13,16 @@ public class BibliotecaApp {
 
     BibliotecaApp(){
         menuOptions.add("List Books");
+
+        books.add(new Book("A Game of Thrones", "G.R.R. Martin", 1996));
+        
         this.run();
     }
 
     public void listBooks(){
-        System.out.println("A Game of Thrones by G.R.R. Martin, 1996");
+        for (Book book : books){
+            System.out.println(book.getTitle() + " by " + book.getAuthor() + ", " + book.getYear());
+        }
     }
 
     public void selectMenuOption(String menuOption){
