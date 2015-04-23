@@ -47,4 +47,12 @@ public class BibliotecaTest {
         assertThat(outContent.toString(), containsString("A Game of Thrones by G.R.R. Martin, 1996"));
     }
 
+    @Test
+    public void testInvalidMenuOption() {
+        BibliotecaApp biblioteca = new BibliotecaApp();
+
+        biblioteca.selectMenuOption("Launch Missile");
+
+        assertThat(outContent.toString(), containsString("Select a valid option!"));
+    }
 }
