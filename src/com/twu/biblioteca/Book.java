@@ -11,9 +11,14 @@ public class Book {
 
     Book(String title, String author, int year){
         this.title = title;
+        this.author = author;
     }
 
     public String getTitle(){
         return title;
+    }
+
+    public String getAuthor(){
+        return author;
     }
 }
