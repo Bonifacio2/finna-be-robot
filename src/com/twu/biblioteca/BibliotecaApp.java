@@ -20,7 +20,11 @@ public class BibliotecaApp {
     }
 
     public void selectMenuOption(String menuOption){
-        if (!menuOptions.contains(menuOption)){
+
+        if (menuOption.equals("Quit")){
+            System.out.println("Bye!");
+            System.exit(0);
+        } else if (!menuOptions.contains(menuOption)){
             System.out.println("Select a valid option!");
         }
     }
