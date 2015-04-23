@@ -34,4 +34,10 @@ public class BookTest {
         Book book = new Book("how to trololo", "Victor Hugo", 2015);
         assertEquals(book.getAuthor(), "Victor Hugo");
     }
+
+    @Test
+    public void testGetYear() {
+        Book book = new Book("how to trololo", "Victor Hugo", 2015);
+        assertEquals(book.getYear(), 2015);
+    }
 }
