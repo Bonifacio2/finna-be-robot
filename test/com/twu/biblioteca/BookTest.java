@@ -28,4 +28,10 @@ public class BookTest {
         Book book = new Book("how to trololo", "me", 2015);
         assertEquals(book.getTitle(), "how to trololo");
     }
+
+    @Test
+    public void testGetAuthor() {
+        Book book = new Book("how to trololo", "Victor Hugo", 2015);
+        assertEquals(book.getAuthor(), "Victor Hugo");
+    }
 }
