@@ -11,9 +11,8 @@ public class BibliotecaApp {
     }
 
     public void listBooks(){
-        System.out.println("A Game of Thrones");
+        System.out.println("A Game of Thrones by G.R.R. Martin, 1996");
     }
-
 
     private void run(){
         System.out.println("Welcome!");

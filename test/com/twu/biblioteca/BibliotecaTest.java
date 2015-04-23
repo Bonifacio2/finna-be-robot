@@ -44,7 +44,7 @@ public class BibliotecaTest {
         BibliotecaApp biblioteca = new BibliotecaApp();
         biblioteca.listBooks();
 
-        assertThat(outContent.toString(), containsString("A Game of Thrones"));
+        assertThat(outContent.toString(), containsString("A Game of Thrones by G.R.R. Martin, 1996"));
     }
 
 }
