@@ -32,4 +32,11 @@ public class BibliotecaTest {
         assertThat(outContent.toString(), containsString("Welcome"));
     }
 
+    @Test
+    public void testMainMenu() {
+        BibliotecaApp biblioteca = new BibliotecaApp();
+
+        assertThat(outContent.toString(), containsString("List Books"));
+    }
+
 }
