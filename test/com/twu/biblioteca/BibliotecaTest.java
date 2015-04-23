@@ -1,12 +1,15 @@
 package com.twu.biblioteca;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 /**
  * Created by bonifacio on 4/19/15.
@@ -26,7 +29,7 @@ public class BibliotecaTest {
     public void testWelcomingMessage() {
         BibliotecaApp biblioteca = new BibliotecaApp();
 
-        assertEquals("Welcome!\n", outContent.toString());
+        assertThat(outContent.toString(), containsString("Welcome"));
     }
 
 }
