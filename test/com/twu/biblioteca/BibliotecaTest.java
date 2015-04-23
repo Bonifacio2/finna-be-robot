@@ -39,4 +39,12 @@ public class BibliotecaTest {
         assertThat(outContent.toString(), containsString("List Books"));
     }
 
+    @Test
+    public void testBookListing() {
+        BibliotecaApp biblioteca = new BibliotecaApp();
+        biblioteca.listBooks();
+
+        assertThat(outContent.toString(), containsString("A Game of Thrones"));
+    }
+
 }
