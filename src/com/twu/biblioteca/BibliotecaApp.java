@@ -19,6 +19,12 @@ public class BibliotecaApp {
         System.out.println("A Game of Thrones by G.R.R. Martin, 1996");
     }
 
+    public void selectMenuOption(String menuOption){
+        if (!menuOptions.contains(menuOption)){
+            System.out.println("Select a valid option!");
+        }
+    }
+
     private void run(){
         System.out.println("Welcome!");
 
