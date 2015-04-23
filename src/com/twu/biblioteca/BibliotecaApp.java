@@ -10,6 +10,11 @@ public class BibliotecaApp {
         this.run();
     }
 
+    public void listBooks(){
+
+    }
+
+
     private void run(){
         System.out.println("Welcome!");
 
