@@ -15,13 +15,14 @@ public class BibliotecaApp {
         menuOptions.add("List Books");
 
         books.add(new Book("A Game of Thrones", "G.R.R. Martin", 1996));
-        
         this.run();
     }
 
     public void listBooks(){
         for (Book book : books){
-            System.out.println(book.getTitle() + " by " + book.getAuthor() + ", " + book.getYear());
+            if (book.isAvailable()){
+                System.out.println(book.getTitle() + " by " + book.getAuthor() + ", " + book.getYear());
+            }
         }
     }
 
@@ -32,6 +33,16 @@ public class BibliotecaApp {
             System.exit(0);
         } else if (!menuOptions.contains(menuOption)){
             System.out.println("Select a valid option!");
+        }
+    }
+
+    public void checkoutBook(String bookTitle){
+
+        for (Book book: books){
+            if (bookTitle.equals(book.getTitle())){
+                book.checkout();
+                return;
+            }
         }
     }
 
