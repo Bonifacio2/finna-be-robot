@@ -8,6 +8,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
@@ -50,7 +51,6 @@ public class BibliotecaTest {
     @Test
     public void testInvalidMenuOption() {
         BibliotecaApp biblioteca = new BibliotecaApp();
-
         biblioteca.selectMenuOption("Launch Missile");
 
         assertThat(outContent.toString(), containsString("Select a valid option!"));
@@ -59,9 +59,18 @@ public class BibliotecaTest {
     @Test
     public void testQuitting() {
         BibliotecaApp biblioteca = new BibliotecaApp();
-
         biblioteca.selectMenuOption("Quit");
 
         assertThat(outContent.toString(), containsString("Bye!"));
+    }
+
+    @Test
+    public void testCheckoutBook(){
+        BibliotecaApp biblioteca = new BibliotecaApp();
+        biblioteca.checkoutBook("A Game of Thrones");
+        biblioteca.listBooks();
+
+        assertThat(outContent.toString(), not(containsString("A Game of Thrones")));
+
     }
 }
