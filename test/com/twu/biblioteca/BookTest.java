@@ -7,8 +7,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.hamcrest.CoreMatchers.containsString;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
 /**
  * Created by bonifacio on 4/23/15.
@@ -39,5 +38,18 @@ public class BookTest {
     public void testGetYear() {
         Book book = new Book("how to trololo", "Victor Hugo", 2015);
         assertEquals(book.getYear(), 2015);
+    }
+
+    @Test
+    public void testIsAvailable() {
+        Book book = new Book("how to trololo", "Victor Hugo", 2015);
+        assertTrue(book.isAvailable());
+    }
+
+    @Test
+    public void testCheckout() {
+        Book book = new Book("how to trololo", "Victor Hugo", 2015);
+        book.checkout();
+        assertFalse(book.isAvailable());
     }
 }
