@@ -82,4 +82,13 @@ public class BibliotecaTest {
         assertThat(outContent.toString(), containsString("Thank you! Enjoy the book"));
 
     }
+
+    @Test
+    public void testUnsuccessfulCheckout(){
+        BibliotecaApp biblioteca = new BibliotecaApp();
+        biblioteca.checkoutBook("Musashi");
+
+        assertThat(outContent.toString(), containsString("That book is not available."));
+
+    }
 }
