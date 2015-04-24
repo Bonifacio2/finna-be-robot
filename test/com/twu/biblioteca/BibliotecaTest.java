@@ -73,4 +73,13 @@ public class BibliotecaTest {
         assertThat(outContent.toString(), not(containsString("A Game of Thrones")));
 
     }
+
+    @Test
+    public void testSuccessfulCheckout(){
+        BibliotecaApp biblioteca = new BibliotecaApp();
+        biblioteca.checkoutBook("A Game of Thrones");
+
+        assertThat(outContent.toString(), containsString("Thank you! Enjoy the book"));
+
+    }
 }
