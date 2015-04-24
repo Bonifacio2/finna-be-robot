@@ -5,14 +5,16 @@ package com.twu.biblioteca;
  */
 public class Book {
 
-    String title;
-    String author;
-    int year;
+    private String title;
+    private String author;
+    private int year;
+    private boolean available;
 
     Book(String title, String author, int year){
         this.title = title;
         this.author = author;
         this.year = year;
+        this.available = true;
     }
 
     public String getTitle(){
@@ -25,5 +27,13 @@ public class Book {
 
     public int getYear() {
         return year;
+    }
+
+    public boolean isAvailable(){
+        return available;
+    }
+
+    public void checkout(){
+        this.available = false;
     }
 }
