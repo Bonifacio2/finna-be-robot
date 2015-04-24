@@ -30,7 +30,7 @@ public class BibliotecaApp {
 
         if (menuOption.equals("Quit")){
             System.out.println("Bye!");
-            System.exit(0);
+            //System.exit(0);
         } else if (!menuOptions.contains(menuOption)){
             System.out.println("Select a valid option!");
         }
@@ -41,6 +41,7 @@ public class BibliotecaApp {
         for (Book book: books){
             if (bookTitle.equals(book.getTitle())){
                 book.checkout();
+                System.out.println("Thank you! Enjoy the book");
                 return;
             }
         }
