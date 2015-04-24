@@ -54,6 +54,25 @@ public class BibliotecaApp {
         }
     }
 
+    public void checkinBook(String bookTitle){
+        boolean bookExists = false;
+
+        for (Book book: books){
+            if (bookTitle.equals(book.getTitle()) && !book.isAvailable()){
+                book.checkin();
+                bookExists = true;
+                break;
+            }
+        }
+
+        if(bookExists){
+            System.out.println("Thank you for returning the book.");
+        } else {
+            System.out.println("That is not a valid book to return.");
+        }
+
+    }
+
     private void run(){
         System.out.println("Welcome!");
 
