@@ -52,4 +52,15 @@ public class BookTest {
         book.checkout();
         assertFalse(book.isAvailable());
     }
+
+    @Test
+    public void testCheckin() {
+        Book book = new Book("how to trololo", "Victor Hugo", 2015);
+        book.checkout();
+
+        assertFalse(book.isAvailable());
+
+        book.checkin();
+        assertTrue(book.isAvailable());
+    }
 }
