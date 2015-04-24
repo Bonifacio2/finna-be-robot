@@ -37,13 +37,20 @@ public class BibliotecaApp {
     }
 
     public void checkoutBook(String bookTitle){
+        boolean bookWasAvailable = false;
 
         for (Book book: books){
-            if (bookTitle.equals(book.getTitle())){
+            if (bookTitle.equals(book.getTitle()) && book.isAvailable()){
                 book.checkout();
-                System.out.println("Thank you! Enjoy the book");
-                return;
+                bookWasAvailable = true;
+                break;
             }
+        }
+
+        if(bookWasAvailable){
+            System.out.println("Thank you! Enjoy the book");
+        } else {
+            System.out.println("That book is not available.");
         }
     }
 
