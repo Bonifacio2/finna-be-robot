@@ -71,7 +71,6 @@ public class BibliotecaTest {
         biblioteca.listBooks();
 
         assertThat(outContent.toString(), not(containsString("A Game of Thrones")));
-
     }
 
     @Test
@@ -80,7 +79,6 @@ public class BibliotecaTest {
         biblioteca.checkoutBook("A Game of Thrones");
 
         assertThat(outContent.toString(), containsString("Thank you! Enjoy the book"));
-
     }
 
     @Test
@@ -89,6 +87,33 @@ public class BibliotecaTest {
         biblioteca.checkoutBook("Musashi");
 
         assertThat(outContent.toString(), containsString("That book is not available."));
-
     }
+
+    @Test
+    public void testCheckinBook(){
+        BibliotecaApp biblioteca = new BibliotecaApp();
+        biblioteca.checkoutBook("A Game of Thrones");
+        biblioteca.checkinBook("A Game of Thrones");
+        biblioteca.listBooks();
+
+        assertThat(outContent.toString(), containsString("A Game of Thrones"));
+    }
+
+    @Test
+    public void testSuccessfulCheckin(){
+        BibliotecaApp biblioteca = new BibliotecaApp();
+        biblioteca.checkoutBook("A Game of Thrones");
+        biblioteca.checkinBook("A Game of Thrones");
+
+        assertThat(outContent.toString(), containsString("Thank you for returning the book."));
+    }
+
+    @Test
+    public void testUnsuccessfulCheckin(){
+        BibliotecaApp biblioteca = new BibliotecaApp();
+        biblioteca.checkinBook("Musashi");
+
+        assertThat(outContent.toString(), containsString("That is not a valid book to return."));
+    }
+
 }
