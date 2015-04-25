@@ -13,6 +13,7 @@ public class BibliotecaApp {
 
     BibliotecaApp(){
         menuOptions.add("List Books");
+        menuOptions.add("List Movies");
 
         books.add(new Book("A Game of Thrones", "G.R.R. Martin", 1996));
         this.run();
