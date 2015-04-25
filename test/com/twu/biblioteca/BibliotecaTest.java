@@ -38,6 +38,7 @@ public class BibliotecaTest {
         BibliotecaApp biblioteca = new BibliotecaApp();
 
         assertThat(outContent.toString(), containsString("List Books"));
+        assertThat(outContent.toString(), containsString("List Movies"));
     }
 
     @Test
