@@ -29,4 +29,8 @@ public class Movie {
         return this.director;
     }
 
+    public boolean isAvailable(){
+        return true;
+    }
+
 }
