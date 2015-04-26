@@ -9,6 +9,8 @@ public class BibliotecaApp {
     private ArrayList<Movie> movies = new ArrayList<Movie>();
     private ArrayList<User> users = new ArrayList<User>();
 
+    private User currentUser;
+
     public static void main(String[] args) {
         System.out.println("Hello, world!");
     }
@@ -21,6 +23,7 @@ public class BibliotecaApp {
         movies.add(new Movie("Into The Wild", 2007, "Sean Penn", 10));
 
         users.add(new User("123-4567", "password", "bonifacio", "bonifacio@mail.com", "2345678"));
+        users.add(new User("999-9999", "password", "somebody", "somebody@mail.com", "1111111"));
 
         this.run();
     }
@@ -93,11 +96,22 @@ public class BibliotecaApp {
         for (User user: users){
             if (user.getLibraryNumber().equals(libraryNumber) &&
                     user.getPassword().equals(password)){
+                currentUser = user;
                 return true;
             }
         }
 
         return false;
+    }
+
+    public User getCurrentUser(){
+        return currentUser;
+    }
+
+    public void showCurrentUserInformation(){
+        System.out.println("Name: " + currentUser.getName());
+        System.out.println("Mail: " + currentUser.getEmail());
+        System.out.println("Phone: " + currentUser.getPhoneNumber());
     }
 
     private void run(){
