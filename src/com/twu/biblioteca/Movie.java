@@ -10,11 +10,14 @@ public class Movie {
     private String director;
     private int rating;
 
+    private boolean available;
+
     Movie(String title, int year, String director, int rating){
         this.title = title;
         this.year = year;
         this.director = director;
         this.rating = rating;
+        this.available = true;
     }
 
     public String getTitle(){
@@ -30,7 +33,11 @@ public class Movie {
     }
 
     public boolean isAvailable(){
-        return true;
+        return this.available;
+    }
+
+    public void checkout(){
+        this.available = false;
     }
 
 }
