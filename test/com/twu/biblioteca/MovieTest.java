@@ -48,4 +48,12 @@ public class MovieTest {
         assertTrue(intoTheWild.getDirector().equals("Sean Penn"));
         assertTrue(theUntouchables.getDirector().equals("Brian De Palma"));
     }
+
+    @Test
+    public void testIsAvailable(){
+        Movie intoTheWild = new Movie("Into The Wild", 2007, "Sean Penn", 10);
+
+        assertTrue(intoTheWild.isAvailable());
+    }
+
 }
