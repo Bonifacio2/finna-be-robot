@@ -6,6 +6,7 @@ public class BibliotecaApp {
 
     private ArrayList<String> menuOptions = new ArrayList<String>();
     private ArrayList<Book> books = new ArrayList<Book>();
+    private ArrayList<Movie> movies = new ArrayList<Movie>();
 
     public static void main(String[] args) {
         System.out.println("Hello, world!");
@@ -16,6 +17,7 @@ public class BibliotecaApp {
         menuOptions.add("List Movies");
 
         books.add(new Book("A Game of Thrones", "G.R.R. Martin", 1996));
+        movies.add(new Movie("Into The Wild", 2007, "Sean Penn", 10));
         this.run();
     }
 
@@ -23,6 +25,14 @@ public class BibliotecaApp {
         for (Book book : books){
             if (book.isAvailable()){
                 System.out.println(book.getTitle() + " by " + book.getAuthor() + ", " + book.getYear());
+            }
+        }
+    }
+
+    public void listMovies(){
+        for (Movie movie: movies){
+            if (movie.isAvailable()){
+                System.out.println(movie.getTitle() + " directed by " + movie.getDirector() + ", " + movie.getYear());
             }
         }
     }
