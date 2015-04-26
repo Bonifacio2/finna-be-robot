@@ -27,5 +27,30 @@ public class UserTest {
         assertEquals(anotherUser.getPassword(), "differentPassword");
     }
 
+    @Test
+    public void testGetName(){
+        User user = new User("123-4567", "password", "bonifacio", "bonifacio@mail.com", "2345678");
+        User anotherUser = new User("765-4321", "differentPassword", "anotherperson", "somebodyelse@mail.com", "8765432");
 
+        assertEquals(user.getName(), "bonifacio");
+        assertEquals(anotherUser.getName(), "anotherperson");
+    }
+
+    @Test
+    public void testGetEmail(){
+        User user = new User("123-4567", "password", "bonifacio", "bonifacio@mail.com", "2345678");
+        User anotherUser = new User("765-4321", "differentPassword", "anotherperson", "somebodyelse@mail.com", "8765432");
+
+        assertEquals(user.getEmail(), "bonifacio@mail.com");
+        assertEquals(anotherUser.getEmail(), "somebodyelse@mail.com");
+    }
+
+    @Test
+    public void testGetPhoneNumber(){
+        User user = new User("123-4567", "password", "bonifacio", "bonifacio@mail.com", "2345678");
+        User anotherUser = new User("765-4321", "differentPassword", "anotherperson", "somebodyelse@mail.com", "8765432");
+
+        assertEquals(user.getPhoneNumber(), "2345678");
+        assertEquals(anotherUser.getPhoneNumber(), "8765432");
+    }
 }
