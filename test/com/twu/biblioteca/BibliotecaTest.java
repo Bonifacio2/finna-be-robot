@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -131,8 +132,27 @@ public class BibliotecaTest {
     public void testLogin(){
         BibliotecaApp biblioteca = new BibliotecaApp();
         assertTrue(biblioteca.login("123-4567", "password"));
+        assertEquals(biblioteca.getCurrentUser().getLibraryNumber(), "123-4567");
 
         assertFalse(biblioteca.login("123-4567", "wrongPassword"));
+    }
+
+    @Test
+    public void testShowCurrentUserInformation(){
+        BibliotecaApp biblioteca = new BibliotecaApp();
+        biblioteca.login("123-4567", "password");
+        biblioteca.showCurrentUserInformation();
+
+        assertThat(outContent.toString(), containsString("Name: bonifacio"));
+        assertThat(outContent.toString(), containsString("Mail: bonifacio@mail.com"));
+        assertThat(outContent.toString(), containsString("Phone: 2345678"));
+
+        biblioteca.login("999-9999", "password");
+        biblioteca.showCurrentUserInformation();
+
+        assertThat(outContent.toString(), containsString("Name: somebody"));
+        assertThat(outContent.toString(), containsString("Mail: somebody@mail.com"));
+        assertThat(outContent.toString(), containsString("Phone: 1111111"));
     }
 
 }
