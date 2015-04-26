@@ -7,6 +7,7 @@ public class BibliotecaApp {
     private ArrayList<String> menuOptions = new ArrayList<String>();
     private ArrayList<Book> books = new ArrayList<Book>();
     private ArrayList<Movie> movies = new ArrayList<Movie>();
+    private ArrayList<User> users = new ArrayList<User>();
 
     public static void main(String[] args) {
         System.out.println("Hello, world!");
@@ -18,6 +19,9 @@ public class BibliotecaApp {
 
         books.add(new Book("A Game of Thrones", "G.R.R. Martin", 1996));
         movies.add(new Movie("Into The Wild", 2007, "Sean Penn", 10));
+
+        users.add(new User("123-4567", "password", "bonifacio", "bonifacio@mail.com", "2345678"));
+
         this.run();
     }
 
@@ -82,6 +86,18 @@ public class BibliotecaApp {
             System.out.println("That is not a valid book to return.");
         }
 
+    }
+
+    public boolean login(String libraryNumber, String password){
+
+        for (User user: users){
+            if (user.getLibraryNumber().equals(libraryNumber) &&
+                    user.getPassword().equals(password)){
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void run(){
