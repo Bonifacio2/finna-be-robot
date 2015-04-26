@@ -7,10 +7,12 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import static junit.framework.TestCase.assertFalse;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by bonifacio on 4/19/15.
@@ -123,6 +125,14 @@ public class BibliotecaTest {
         biblioteca.checkinBook("Musashi");
 
         assertThat(outContent.toString(), containsString("That is not a valid book to return."));
+    }
+
+    @Test
+    public void testLogin(){
+        BibliotecaApp biblioteca = new BibliotecaApp();
+        assertTrue(biblioteca.login("123-4567", "password"));
+
+        assertFalse(biblioteca.login("123-4567", "wrongPassword"));
     }
 
 }
