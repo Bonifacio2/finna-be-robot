@@ -59,7 +59,7 @@ public class BibliotecaApp {
 
         for (Book book: books){
             if (bookTitle.equals(book.getTitle()) && book.isAvailable()){
-                book.checkout();
+                book.checkout(currentUser);
                 bookWasAvailable = true;
                 break;
             }

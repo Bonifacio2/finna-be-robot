@@ -10,6 +10,8 @@ public class Book {
     private int year;
     private boolean available;
 
+    private User checkedOutBy;
+
     Book(String title, String author, int year){
         this.title = title;
         this.author = author;
@@ -33,11 +35,17 @@ public class Book {
         return available;
     }
 
-    public void checkout(){
+    public void checkout(User user){
         this.available = false;
+        this.checkedOutBy = user;
     }
 
     public void checkin(){
         this.available = true;
+        this.checkedOutBy = null;
+    }
+
+    public User getCheckedOutBy(){
+        return checkedOutBy;
     }
 }
