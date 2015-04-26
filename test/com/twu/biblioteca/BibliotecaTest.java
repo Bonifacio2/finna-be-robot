@@ -50,6 +50,14 @@ public class BibliotecaTest {
     }
 
     @Test
+    public void testMovieListing() {
+        BibliotecaApp biblioteca = new BibliotecaApp();
+        biblioteca.listMovies();
+
+        assertThat(outContent.toString(), containsString("Into The Wild directed by Sean Penn, 2007"));
+    }
+
+    @Test
     public void testInvalidMenuOption() {
         BibliotecaApp biblioteca = new BibliotecaApp();
         biblioteca.selectMenuOption("Launch Missile");
