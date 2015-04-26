@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -54,6 +55,14 @@ public class MovieTest {
         Movie intoTheWild = new Movie("Into The Wild", 2007, "Sean Penn", 10);
 
         assertTrue(intoTheWild.isAvailable());
+    }
+
+    @Test
+    public void testCheckout(){
+        Movie intoTheWild = new Movie("Into The Wild", 2007, "Sean Penn", 10);
+        intoTheWild.checkout();
+
+        assertFalse(intoTheWild.isAvailable());
     }
 
 }
