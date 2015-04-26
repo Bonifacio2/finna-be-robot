@@ -28,4 +28,16 @@ public class User {
     public String getPassword(){
         return this.password;
     }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public String getEmail(){
+        return email;
+    }
+
+    public String getPhoneNumber(){
+        return this.phoneNumber;
+    }
 }
