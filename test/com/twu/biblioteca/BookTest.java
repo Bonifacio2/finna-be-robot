@@ -49,18 +49,25 @@ public class BookTest {
     @Test
     public void testCheckout() {
         Book book = new Book("how to trololo", "Victor Hugo", 2015);
-        book.checkout();
+        User user = new User("123-4567", "password");
+
+        book.checkout(user);
+
         assertFalse(book.isAvailable());
+        assertEquals(book.getCheckedOutBy(), user);
     }
 
     @Test
     public void testCheckin() {
         Book book = new Book("how to trololo", "Victor Hugo", 2015);
-        book.checkout();
+        User user = new User("123-4567", "password");
+        book.checkout(user);
 
         assertFalse(book.isAvailable());
+        assertEquals(book.getCheckedOutBy(), user);
 
         book.checkin();
         assertTrue(book.isAvailable());
+        assertNull(book.getCheckedOutBy());
     }
 }
